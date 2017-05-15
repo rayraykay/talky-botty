@@ -1,0 +1,46 @@
+body {
+    font-family: courier;
+}
+
+.chat {
+    height: 100vh;
+}
+
+.chat .user {
+    background-color: rgba(0,0,255,0.2);
+}
+
+.chat .bot {
+    background-color: rgba(0,255,0,0.2);
+}
+
+.chat .title {
+    text-align: center;
+}
+
+.box {
+    position: relative;
+    border: 2px solid black;
+    height: 70vh;
+    width: 40vw;
+    left: 5vw;
+}
+
+.input {
+    width: 45vw;
+    height: 10vh;
+}
+
+.input input {
+    position: relative;
+    height: 5vh;
+    width: 35vw;
+    top: 1vh;
+    left: 5vw;
+}
+
+.input button {
+    position: relative;
+    top: 1vh;
+    left: 5vw;
+}

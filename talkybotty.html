@@ -10,6 +10,31 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
         <!--self-made scripts-->
-        
+        <script type="text/javascript" src="./talkybotty.js"></script>
+
+        <!--style scripts-->
+        <link type="text/css" href="./styles/styles.css" rel="stylesheet" />
     </head>
+
+    <body>
+        <div class="chat row">
+            <div class="user col">
+                <p class="title">User Chatbox</p>
+                <div class="box"></div>
+                <div class="input">
+                    <input type="text" placeholder="Try me!!!" />
+                    <!--Why is this single quotes??-->
+                    <button onClick="windowAlert('FUCK ME!!!');">Send</button>
+                </div>
+            </div>
+            <div class="bot col">
+                <p class="title">What the Bot Sees</p>
+                <div class="box"></div>
+                <div class="input">
+                    <input type="text" placeholder="I am the bot!!! Do not fking touch me or else I will fk you!!!" />
+                    <button>Send</button>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
