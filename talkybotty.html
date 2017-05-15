@@ -20,13 +20,22 @@
         <div class="chat row">
             <div class="user col">
                 <p class="title">User Chatbox</p>
-                <div class="box"></div>
+                <div class="box">
+                	<ul>
+                		<li class="message sender">Hello</li>
+                		<li class="message receiver">What's up</li>
+                		<li class="message sender">ASL?</li>
+                		<li class="message sender">age sex location?</li>
+                		<li class="message receiver">20 unspecified province of inner mongolia</li>
+                	</ul>
+                </div>
                 <div class="input">
                     <input type="text" placeholder="Try me!!!" />
                     <!--Why is this single quotes??-->
-                    <button onClick="windowAlert('bot');">Send</button>
+                    <button onClick="displayMessageToWindow('user');">Send</button>
                 </div>
             </div>
+            
             <div class="bot col">
                 <p class="title">What the Bot Sees</p>
                 <div class="box"></div>
