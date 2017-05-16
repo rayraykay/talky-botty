@@ -21,7 +21,6 @@ body {
 
 ul {
 	position: absolute;
-	overflow: hidden;
 	list-style: none;
 	width: 39.8vw;
 	padding: 0px 1vw 0px 0.25vw;
@@ -43,11 +42,11 @@ ul {
 
 .box {
     position: relative;
+    overflow: auto;
     border: 2px solid black;
     height: 70vh;
     width: 40vw;
     left: 5vw;
-    overflow: auto;
 }
 
 /* inputs for users */

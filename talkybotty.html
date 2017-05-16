@@ -22,97 +22,36 @@
             <div class="user col">
                 <p class="title">User Chatbox</p>
                 <div class="box">
-                	<ul>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                	</ul>
+                	<ul></ul>
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="Try me!!!" />
+                    <input  type="text"
+                            placeholder="Try me!!!"
+                            onkeydown=   "if (event.keyCode == 13)
+                                            displayMessage('user', 'bot');"/>
                     <!--Why is this single quotes??-->
-                    <button onClick="displayMessageToWindow('user');">Send</button>
+                    <button onClick="displayMessage('user', 'bot');">Send</button>
                 </div>
             </div>
-            
+
             <div class="bot col">
                 <p class="title">What the Bot Sees</p>
                 <div class="box">
-                	<ul>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                		<li class="message sender">Hello</li>
-                		<li class="message receiver">What's up</li>
-                		<li class="message sender">ASL?</li>
-                		<li class="message sender">age sex location?</li>
-                		<li class="message receiver">20 unspecified province of inner mongolia</li>
-                	</ul>
+                	<ul></ul>
                 </div>
                 <div class="input">
-                    <input type="text" placeholder="I am the bot!!! Do not bloody touch me or else I will destroy you!!!" />
-                    <button onClick="displayMessageToWindow('bot');">Send</button>
+                    <input  type="text"
+                            placeholder="I am the bot!!! Do not bloody touch me or else I will destroy you!!!"
+                            onkeydown=   "if (event.keyCode == 13)
+                                            displayMessage('bot', 'user');"/>
+                    <button onClick="displayMessage('bot', 'user');">Send</button>
                 </div>
             </div>
         </div>
+
+        <!--load the hashmap-->
+        <script text="text/javascript">
+            window.onload = loadClassToIndexMap();
+        </script>
     </body>
 </html>
