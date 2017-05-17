@@ -29,7 +29,8 @@
                             placeholder="Try me!!!"
                             onkeydown=   "if (event.keyCode == 13)
                                             displayMessage('user', 'bot');"/>
-                    <!--Why is this single quotes??-->
+
+                    <input class="upload" type="file" onchange="displayMessage('user', 'bot');">
                 </div>
             </div>
 
@@ -43,6 +44,8 @@
                             placeholder="I am the bot!!! Do not bloody touch me or else I will destroy you!!!"
                             onkeydown=   "if (event.keyCode == 13)
                                             displayMessage('bot', 'user');"/>
+
+                    <input class="upload" type="file" onchange="displayMessage('bot', 'class');">
                 </div>
             </div>
         </div>

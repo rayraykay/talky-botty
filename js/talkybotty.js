@@ -18,30 +18,67 @@ function loadClassToIndexMap() {
 /*
 */
 function displayMessage (senderClass, receiverClass) {
-	// can hash using .filter("." + classname)
-	let textInputs = $("input");
-	let chatBoxes = $("ul");
-
-	let senderTextInput = $("input").eq(classToIndexMap[senderClass]);
+	// get the message lists to append to
 	let senderMessages = $("ul").eq(classToIndexMap[senderClass]);
 	let receiverMessages = $("ul").eq(classToIndexMap[receiverClass]);
 
-	// display on the sender window
-	senderMessages.append( $("<li>", {
-		html: senderTextInput.val(),
-		"class": "message sender"
-	}) );
-	senderMessages.append( $("<br />") );
+	let senderTextInput = $("input[type=text]").eq(classToIndexMap[senderClass]);
 
-	// display on receiver window
-	receiverMessages.append( $("<li>", {
-		html: senderTextInput.val(),
-		"class": "message receiver"
-	}) );
-	receiverMessages.append( $("<br />") );
+	// only send non-empty text
+	if (senderTextInput.val().trim()) {
+		// display on the sender window
+		senderMessages.append( $("<li>", {
+			html: senderTextInput.val(),
+			"class": "message sent"
+		}) );
+		senderMessages.append( $("<br />") );
 
-	// delete the input
-	senderTextInput.val("");
+		// display on receiver window
+		receiverMessages.append( $("<li>", {
+			html: senderTextInput.val(),
+			"class": "message received"
+		}) );
+		receiverMessages.append( $("<br />") );
+
+		// delete the input
+		senderTextInput.val("");
+	}
+
+	let senderFileInput = $("input[type=file]").eq(classToIndexMap[senderClass]);
+
+	// only send a file if there is one
+	if (senderFileInput[0].files.length) {
+		let file = senderFileInput[0].files[0];
+		let reader = new FileReader();
+
+		// add listener that will add the photo as an <img> in an <li>
+		reader.addEventListener ("load", function() {
+			// file as a jquery object
+			let $file = $("<img>", {
+				src: reader.result,
+				alt: reader.result
+			});
+
+			senderMessages.append( $("<li>", {
+				html: $file.prop('outerHTML'), // plug in raw html of $image
+				"class": "message sent"
+			}) );
+			senderMessages.append( $("<br />") );
+
+			receiverMessages.append( $("<li>", {
+				html: $file.prop('outerHTML'),
+				"class": "message received"
+			}) );
+			receiverMessages.append( $("<br />") );
+		});
+
+		// ensure that the file is read and delete the input so as to
+		// not repeatedly upload it
+		if (file) {
+			reader.readAsDataURL(file);
+			senderFileInput.val("");
+		}
+	}
 
 	// set the scroll bar of both boxes to be the bottom
 	let senderChatbox = $(".box").eq(classToIndexMap[senderClass]);

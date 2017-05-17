@@ -40,12 +40,12 @@ li {
     display: inline-block;
 }
 
-.message.sender {
+.message.sent {
     float: right;
 	background-color: rgba(255,0,0,0.2);
 }
 
-.message.receiver {
+.message.received {
 	float: left;
 	background-color: rgba(0,125,125,0.2);
 }
