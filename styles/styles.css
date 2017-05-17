@@ -1,5 +1,5 @@
 body {
-    font-family: courier;
+    font-family: "Lucida Grande", Geneva, Verdana, sans-serif;
     font-style: new;
 }
 
@@ -9,12 +9,22 @@ body {
     height: 100vh;
 }
 
+.col {
+    width: 50vw;
+}
+
 .chat .user {
-    background-color: rgba(0,0,255,0.2);
+    background-color: rgba(59,89,152,1.0);
+    font-size: 2rem;
+}
+
+.chat .user .title {
+    color: white;
 }
 
 .chat .bot {
     background-color: rgba(0,255,0,0.2);
+    font-size: 2rem;
 }
 
 /* elements within chatbox */
@@ -22,17 +32,21 @@ body {
 ul {
 	position: absolute;
 	list-style: none;
-	width: 39.8vw;
+    width: 100%;
 	padding: 0px 1vw 0px 0.25vw;
 }
 
+li {
+    display: inline-block;
+}
+
 .message.sender {
-	text-align: right;
+    float: right;
 	background-color: rgba(255,0,0,0.2);
 }
 
 .message.receiver {
-	text-align: left;
+	float: left;
 	background-color: rgba(0,125,125,0.2);
 }
 
@@ -42,30 +56,27 @@ ul {
 
 .box {
     position: relative;
+    display: block;
     overflow: auto;
-    border: 2px solid black;
+    border: 2px solid grey;
     height: 70vh;
-    width: 40vw;
-    left: 5vw;
+    background-color: white;
+    font-size: 1.5rem;
+}
+
+.user .box {
+    left: 1vw;
 }
 
 /* inputs for users */
 
-.input {
-    width: 45vw;
-    height: 10vh;
-}
-
 .input input {
     position: relative;
     height: 5vh;
-    width: 35vw;
-    top: 1vh;
-    left: 5vw;
+    width: 100%;
+    font-size: 1.5rem;
 }
 
-.input button {
-    position: relative;
-    top: 1vh;
-    left: 5vw;
+.user .input input {
+    left: 1vw;
 }

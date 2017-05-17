@@ -16,7 +16,6 @@ function loadClassToIndexMap() {
 }
 
 /*
-
 */
 function displayMessage (senderClass, receiverClass) {
 	// can hash using .filter("." + classname)
@@ -32,12 +31,14 @@ function displayMessage (senderClass, receiverClass) {
 		html: senderTextInput.val(),
 		"class": "message sender"
 	}) );
+	senderMessages.append( $("<br />") );
 
 	// display on receiver window
 	receiverMessages.append( $("<li>", {
 		html: senderTextInput.val(),
 		"class": "message receiver"
 	}) );
+	receiverMessages.append( $("<br />") );
 
 	// delete the input
 	senderTextInput.val("");
@@ -46,7 +47,7 @@ function displayMessage (senderClass, receiverClass) {
 	let senderChatbox = $(".box").eq(classToIndexMap[senderClass]);
 	let receiverChatbox = $(".box").eq(classToIndexMap[receiverClass]);
 	senderChatbox.scrollTop(senderChatbox[0].scrollHeight);
-	receiverChatbox.scrollTop(receiverChatbox[0].height());
+	receiverChatbox.scrollTop(receiverChatbox[0].scrollHeight);
 }
 
 /*
